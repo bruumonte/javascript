@@ -18,8 +18,30 @@
     </style>
 </head>
 <body>
-    <div id="area">
+    <div id="area"> <!--> onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" podemos colocar após a id da div esses códigos para criar os eventos das functions, mas, usar o Listener deixa a div mais limpa e colocamos os eventos dentro do script para facilitar a leitura.-->
         Interaja...
     </div>
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        //o comando addEventListener é melhor para darmos os comandos para os eventos das functions. Eles tornam o código mais limpo e mais fácil de ler, fazendo o mesmo papel do código usado na div.
+
+        function clicar() {
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        function entrar() {
+            a.innerText = 'Entrou'
+        }
+
+        function sair () {
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+    </script>
 </body>
 </html>
